@@ -1,0 +1,156 @@
+using System.Collections.Generic;
+
+namespace Final_Project
+{
+    public partial class Form1 : Form
+    {
+        private List<Book> books = new List<Book>();
+        public class Book
+        {
+            public string Title { get; set; }
+            public string Author { get; set; }
+
+            public Book(string title, string author)
+            {
+                Title = title;
+                Author = author;
+            }
+        }
+
+        public enum BookList
+        {
+            The_Catcher_in_the_Rye,
+            To_Kill_a_Mockingbird,
+            The_Great_Gatsby,
+            Pride_and_Prejudice,
+            Lord_of_the_Flies,
+            Crime_and_Punishment,
+            War_and_Peace,
+            The_Adventures_of_Tom_Sawyer,
+            The_Little_Prince,
+            The_Hobbit,
+            The_Lord_of_the_Rings,
+            The_Chronicles_of_Narnia,
+            Frankenstein,
+            Wuthering_Heights,
+            Dracula,
+            Jane_Eyre,
+            Alice,
+        }
+
+        public Form1()
+        {
+            InitializeComponent();
+
+            dataGridView1.Rows.Add("The Catcher in the Rye");
+            dataGridView1.Rows.Add("To Kill a Mockingbird");
+            dataGridView1.Rows.Add("The Great Gatsby");
+            dataGridView1.Rows.Add("Theory of Gravity");
+            dataGridView1.Rows.Add("The Catcher in the Rye");
+            dataGridView1.Rows.Add("To Kill a Mockingbird");
+            dataGridView1.Rows.Add("The Great Gatsby");
+            dataGridView1.Rows.Add("Theory of Gravity");
+            dataGridView1.Rows.Add("The Lord of the Rings");
+
+            // Add 3 rows to the "Author" column
+            dataGridView1.Rows[0].Cells[1].Value = "J.D. Salinger";
+            dataGridView1.Rows[1].Cells[1].Value = "Harper Lee";
+            dataGridView1.Rows[2].Cells[1].Value = "F. Scott Fitzgerald";
+            dataGridView1.Rows[3].Cells[1].Value = "Stephen Hawkings";
+            dataGridView1.Rows[4].Cells[1].Value = "J.D. Salinger";
+            dataGridView1.Rows[5].Cells[1].Value = "Harper Lee";
+            dataGridView1.Rows[6].Cells[1].Value = "F. Scott Fitzgerald";
+            dataGridView1.Rows[7].Cells[1].Value = "Stephen Hawking";
+            dataGridView1.Rows[8].Cells[1].Value = "J.R.R. Tolkien";
+
+            // Set the status of the first book to "Available"
+            dataGridView1.Rows[0].Cells[2].Value = true;
+            dataGridView1.Rows[1].Cells[2].Value = false;
+            dataGridView1.Rows[2].Cells[2].Value = true;
+            dataGridView1.Rows[3].Cells[2].Value = true;
+            dataGridView1.Rows[4].Cells[2].Value = false;
+            dataGridView1.Rows[5].Cells[2].Value = true;
+            dataGridView1.Rows[6].Cells[2].Value = true;
+            dataGridView1.Rows[7].Cells[2].Value = false;
+
+
+            dataGridView1.Rows.Add("The Catcher in the Rye", "J.D. Salinger", true);
+            dataGridView1.Rows.Add("To Kill a Mockingbird", "Harper Lee", false);
+            dataGridView1.Rows.Add("The Great Gatsby", "F. Scott Fitzgerald", true);
+            dataGridView1.Rows.Add("Theory of Gravity", "Stephen Hawking", true);
+
+            // Load featured books from the data grid
+            List<string> featuredBooks = new List<string>();
+            Random random = new Random();
+            int count = 0;
+            while (count < 5)
+            {
+                int index = random.Next(dataGridView1.Rows.Count);
+                string bookName = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                string authorName = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                if (featuredBooks.Contains(bookName))
+                {
+                    continue;
+                }
+                featuredBooks.Add(bookName);
+                count++;
+            }
+
+            // Add featured books to the list box
+            foreach (string book in featuredBooks)
+            {
+                Featured.Items.Add(book);
+            }
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Featured_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            string searchString = SearchBar.Text;
+            bool found = false;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().Contains(searchString))
+                    {
+                        cell.Style.BackColor = Color.Yellow;
+                        found = true;
+                    }
+                    else
+                    {
+                        cell.Style.BackColor = Color.White;
+                    }
+                }
+            }
+
+            if (!found)
+            {
+                MessageBox.Show("No matching cells found.");
+            }
+        }
+
+        private void Quit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        
+    }
+}

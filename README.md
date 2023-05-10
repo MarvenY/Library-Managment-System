@@ -5,4 +5,8 @@ This Program took about 3 days to complete as we were on a very short notice and
 
 You can find below some images of the software developed :
 
-<img src = "computer-design-template-19fcbb354d2bd7bde0059de2c0ac1cca_screen-removebg-preview.png" align = "center"/>
+# Software Prototype :
+<img src = "/Media/LMS Prototype.jpg" align = "center"/>
+
+# Software with data implementation: 
+<img src = "/Media/LMS Active.jpg" align = "center"/>

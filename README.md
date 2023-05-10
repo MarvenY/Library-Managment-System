@@ -3,7 +3,7 @@ This is my final Object Oriented Programing/Design project using C# and elucidat
 
 This Program took about 3 days to complete as we were on a very short notice and unexpected changes.
 
-You can find below some images of the software developed :
+You can find some images of the software below :
 
 # Software Prototype :
 <img src = "/Media/LMS Prototype.jpg" align = "center"/>

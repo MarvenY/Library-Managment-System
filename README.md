@@ -5,8 +5,8 @@ This Program took about 3 days to complete as we were on a very short notice and
 
 You can find some images of the software below :
 
-# Software Prototype :
+# Software Prototype 🎨 :
 <img src = "/Media/LMS Prototype.jpg" align = "center"/>
 
-# Software with data implementation: 
+# Software with data implementation 🎨 :
 <img src = "/Media/LMS Active.jpg" align = "center"/>

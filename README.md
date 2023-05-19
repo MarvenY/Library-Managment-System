@@ -1,4 +1,4 @@
-# Library Managment System (LMS)
+# Library Managment System (LMS) 📚
 This is my final Object Oriented Programing/Design project using C# and elucidating the employed design concept through the utilization of UML diagrams
 
 This Program took about 3 days to complete as we were on a very short notice and unexpected changes.
